@@ -30,13 +30,13 @@ export default function Home() {
       setMsg({ type: "err", text: data?.error || "No se pudo guardar" });
       return;
     }
-    setMsg({ type: "ok", text: "Lead guardado correctamente" });
+    setMsg({ type: "ok", text: "Datos guardado correctamente" });
     setName(""); setEmail(""); load();
   }
 
   async function removeLead(id: string) {
     await fetch(`/api/leads?id=${id}`, { method: "DELETE" });
-    setMsg({ type: "ok", text: "Lead eliminado" });
+    setMsg({ type: "ok", text: "Dato eliminado" });
     load();
   }
 

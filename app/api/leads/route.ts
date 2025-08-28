@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   } catch (e: any) {
     // Manejo básico de duplicado de email
     if (e?.code === 11000) {
-      return NextResponse.json({ error: "Email ya registrado" }, { status: 409 });
+      return NextResponse.json({ error: "Este correo ya se encuentra registrado" }, { status: 409 });
     }
     return NextResponse.json({ error: e?.message || "Error" }, { status: 500 });
   }
